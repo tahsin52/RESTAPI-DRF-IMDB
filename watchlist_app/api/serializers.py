@@ -1,6 +1,7 @@
 from rest_framework import serializers
 
 from review.models import Review
+from watchlist_app import models
 from watchlist_app.models import WatchList, StreamPlatform
 
 
@@ -20,6 +21,10 @@ class WatchListSerializer(serializers.ModelSerializer):
     class Meta:
         model = WatchList
         fields = "__all__"
+
+#   https://stackoverflow.com/questions/67090526/the-create-method-does-not-support-writable-dotted-source-fields-by-default
+    def create(self, validated_data):
+        return models.WatchList.objects.create(**validated_data)
 
 
 class StreamPlatformSerializer(serializers.ModelSerializer):

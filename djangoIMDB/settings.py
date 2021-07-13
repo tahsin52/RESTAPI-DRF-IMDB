@@ -137,7 +137,19 @@ REST_FRAMEWORK =  {
     # "DEFAULT_AUTHENTICATION_CLASSES": [
     #     'rest_framework.authentication.BasicAuthentication',
     # ]
+
+
+    # https://www.django-rest-framework.org/api-guide/authentication/#tokenauthentication
+    # "DEFAULT_AUTHENTICATION_CLASSES": [
+    #     'rest_framework.authentication.TokenAuthentication',
+    # ]
+
+
+#   https://django-rest-framework-simplejwt.readthedocs.io/en/latest/
     "DEFAULT_AUTHENTICATION_CLASSES": [
-        'rest_framework.authentication.TokenAuthentication',
-    ]
+        'rest_framework_simplejwt.authentication.JWTAuthentication',    ]
+}
+# ROTATE REFRESH TOKEN
+SIMPLE_JWT = {
+    'ROTATE_REFRESH_TOKENS': True
 }

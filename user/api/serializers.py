@@ -1,6 +1,8 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
 
+
+# https://www.django-rest-framework.org/api-guide/authentication/#tokenauthentication
 class RegistrationSerializer(serializers.ModelSerializer):
     password2 = serializers.CharField(max_length=255, write_only=True, style={'input_type': 'password'})
 
