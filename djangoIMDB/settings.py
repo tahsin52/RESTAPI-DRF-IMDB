@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # APPS
     'watchlist_app',
     'review',
+    'user',
     'rest_framework',
     'rest_framework.authtoken',
 ]
