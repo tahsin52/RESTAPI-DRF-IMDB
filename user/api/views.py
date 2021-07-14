@@ -23,16 +23,16 @@ def registration_view(request):
             data['email'] = account.email
 
             # OAUTH TOKEN
-            # token = Token.objects.get(user=account).key
-            # data['token'] = token
+            token = Token.objects.get(user=account).key
+            data['token'] = token
 
             # JWT TOKEN
             # https://django-rest-framework-simplejwt.readthedocs.io/en/latest/creating_tokens_manually.html
-            refresh = RefreshToken.for_user(account)
-            data['token'] = {
-                'refresh': str(refresh),
-                'access': str(refresh.access_token),
-            }
+            # refresh = RefreshToken.for_user(account)
+            # data['token'] = {
+            #     'refresh': str(refresh),
+            #     'access': str(refresh.access_token),
+            # }
         else:
             data = serializer.errors
 

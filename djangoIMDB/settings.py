@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'user',
     'rest_framework',
     'rest_framework.authtoken',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -140,16 +141,29 @@ REST_FRAMEWORK =  {
 
 
     # https://www.django-rest-framework.org/api-guide/authentication/#tokenauthentication
-    # "DEFAULT_AUTHENTICATION_CLASSES": [
-    #     'rest_framework.authentication.TokenAuthentication',
-    # ]
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+
+    # https://www.django-rest-framework.org/api-guide/throttling/
+    # 'DEFAULT_THROTTLE_CLASSES': [
+    #     'rest_framework.throttling.AnonRateThrottle',
+    #     'rest_framework.throttling.UserRateThrottle'
+    # ],
+    'DEFAULT_THROTTLE_RATES': {
+        'anon': '15/day',
+        'user': '30/day',
+        'review-create': '5/day',
+        'review-list': '15/day',
+        'review-detail': '10/day'
+    }
 
 
 #   https://django-rest-framework-simplejwt.readthedocs.io/en/latest/
-    "DEFAULT_AUTHENTICATION_CLASSES": [
-        'rest_framework_simplejwt.authentication.JWTAuthentication',    ]
+#     "DEFAULT_AUTHENTICATION_CLASSES": [
+#         'rest_framework_simplejwt.authentication.JWTAuthentication',    ]
 }
 # ROTATE REFRESH TOKEN
-SIMPLE_JWT = {
-    'ROTATE_REFRESH_TOKENS': True
-}
+# SIMPLE_JWT = {
+#     'ROTATE_REFRESH_TOKENS': True
+# }
