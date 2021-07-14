@@ -34,13 +34,13 @@ Sonuç olarak, daha verimlidir ve DRF'nin yerleşik jeton sisteminden daha iyi �
 
 ### 3. Stream Platforms
 * GET and POST [http://127.0.0.1:8000/watch/stream/](http://127.0.0.1:8000/watch/stream/)
-* PUT and DESTROY [http://127.0.0.1:8000/watch/stream/<int:streamplatform_id>/](http://127.0.0.1:8000/watch/stream/<int:streamplatform_id>/)
+* PUT and DESTROY [http://127.0.0.1:8000/watch/stream/int:streamplatform_id/](http://127.0.0.1:8000/watch/stream/<int:streamplatform_id>/)
 
 ### 4. Watch List
 * POST and GET [http://127.0.0.1:8000/watch/stream/](http://127.0.0.1:8000/watch/stream/)
-* PUT and DESTROY [http://127.0.0.1:8000/watch/stream/<int:movie_id>/](http://127.0.0.1:8000/watch/stream/<movie_id>/)
+* PUT and DESTROY [http://127.0.0.1:8000/watch/stream/int:movie_id/](http://127.0.0.1:8000/watch/stream/<movie_id>/)
 
 ### 5. Reviews
-* Create Review For Specific Movie [http://127.0.0.1:8000/watch/<int:movie_id>/review-create/](http://127.0.0.1:8000/watch/4/review-create/)
-* List all Reviews [http://127.0.0.1:8000/watch/<int:movie_id>/reviews/](http://127.0.0.1:8000/watch/4/reviews/)
-* PUT and DESTROY [http://127.0.0.1:8000/watch/review/<int:review_id>/](http://127.0.0.1:8000/watch/review/1/)
+* Create Review For Specific Movie [http://127.0.0.1:8000/watch/int:movie_id/review-create/](http://127.0.0.1:8000/watch/4/review-create/)
+* List all Reviews [http://127.0.0.1:8000/watch/int:movie_id/reviews/](http://127.0.0.1:8000/watch/4/reviews/)
+* PUT and DESTROY [http://127.0.0.1:8000/watch/review/int:review_id/](http://127.0.0.1:8000/watch/review/1/)
